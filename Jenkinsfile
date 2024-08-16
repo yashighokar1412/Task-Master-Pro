@@ -13,7 +13,7 @@ pipeline {
              }
          }
               stage('maven compile') {
-            steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+            steps {{
                 sh 'mvn compile'
         }
                   }
