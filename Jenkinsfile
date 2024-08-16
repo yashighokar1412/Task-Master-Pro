@@ -26,7 +26,7 @@ tools {
         }
          stage('maven package') {
                 steps {
-                    sh 'mvn clean package'
+                    sh 'mvn package'
               }
         }
          stage('sonar scan') {
