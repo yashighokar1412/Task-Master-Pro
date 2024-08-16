@@ -13,10 +13,10 @@ pipeline {
              }
          }
               stage('maven compile') {
-            steps {{
+            steps {
                 sh 'mvn compile'
         }
                   }
               }
             
-        }}}
+        }}
