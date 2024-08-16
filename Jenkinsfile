@@ -27,6 +27,10 @@ tools {
          stage('maven package') {
                 steps {
                     sh 'mvn package'
+              }
+        }
+         stage('sonar scan') {
+                steps {withSonarQubeEnv(credentialsId: 'sonar') {
+                    sh 'sonar:sonar'
         
-    }}
-    }}
+    }}}}}
