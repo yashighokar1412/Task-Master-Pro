@@ -12,18 +12,18 @@ pipeline {
                 sh 'mvn validate'
              }
          }
-            stage('maven compile') {
-            steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+        stage('maven compile') {
+             steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
                 sh 'mvn compile'
               }
           }
-                stage('maven test') {
-            steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+        stage('maven test') {
+             steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
                 sh 'mvn test'
             }
         }
-                    stage('maven package') {
-            steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+        stage('maven package') {
+             steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
                 sh 'mvn package'
             }
        }           
