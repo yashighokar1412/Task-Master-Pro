@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+tools {
+    maven 'MAVEN_HOME'
+}
     stages {
         stage('git checkout') {
             steps {git branch: 'main', url: 'https://github.com/yashighokar1412/Task-Master-Pro.git'
@@ -8,7 +10,7 @@ pipeline {
             }
         }
         stage('maven validate') {
-            steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+            steps {
                 sh 'mvn validate'
              }
          }
@@ -19,4 +21,4 @@ pipeline {
                   }
               }
             
-        }}
+        }
