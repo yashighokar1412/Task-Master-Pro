@@ -12,21 +12,21 @@ pipeline {
                 sh 'mvn validate'
              }
          }
-            stage('maven validate') {
+            stage('maven compile') {
             steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
                 sh 'mvn compile'
               }
           }
-                stage('maven validate') {
+                stage('maven test') {
             steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
                 sh 'mvn test'
             }
         }
-                    stage('maven validate') {
+                    stage('maven package') {
             steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
                 sh 'mvn package'
             }
-     }           
+       }           
     }
     }
 }
