@@ -30,7 +30,7 @@ tools {
               }
         }
          stage('sonar scan') {
-                steps {withSonarQubeEnv(credentialsId: 'sonar') {
+                steps {withSonarQubeEnv(credentialsId: 'sonar',installationName:'sonar') {
                     sh 'sonar:sonar'
         
     }}}}}
