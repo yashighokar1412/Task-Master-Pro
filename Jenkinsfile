@@ -31,6 +31,6 @@ tools {
         }
          stage('sonar scan') {
                 steps {withSonarQubeEnv(credentialsId: 'sonar',installationName:'sonar') {
-                    sh 'sonar:sonar'
+                    sh 'mvn package sonar:sonar'
         
     }}}}}
