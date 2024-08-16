@@ -12,4 +12,11 @@ pipeline {
                 sh 'mvn validate'
              }
          }
+              stage('maven compile') {
+            steps {withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+                sh 'mvn compile'
+        }
+                  }
+              }
+            
         }}}
